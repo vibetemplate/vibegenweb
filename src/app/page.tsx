@@ -1,26 +1,12 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles, Code, Zap } from "lucide-react";
+import { ArrowRight, Code, Zap, Sparkles } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <Sparkles className="h-8 w-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gray-900">VibeGen</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/docs" className="text-gray-600 hover:text-gray-900">文档</Link>
-              <Link href="/templates" className="text-gray-600 hover:text-gray-900">模板库</Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-900">关于</Link>
-              <Link href="/docs" className="btn-primary">开始使用</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="pt-20 pb-16">
@@ -120,63 +106,22 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gradient-to-r from-primary-600 via-purple-600 to-indigo-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-4">
             准备好体验AI驱动的开发流程了吗？
           </h2>
-          <p className="text-xl text-primary-100 mb-8">
+          <p className="text-xl text-white/90 mb-8">
             加入数千名开发者，让VibeGen帮你将想法快速转化为现实。
           </p>
-          <Link href="/docs" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors inline-flex items-center">
+          <Link href="/docs" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors inline-flex items-center shadow-lg hover:shadow-xl">
             免费开始使用 <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Sparkles className="h-6 w-6" />
-                <span className="text-xl font-bold">VibeGen</span>
-              </div>
-              <p className="text-gray-400">
-                AI原生开发工具，让创意变为现实。
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">产品</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/features">功能特性</Link></li>
-                <li><Link href="/templates">模板库</Link></li>
-                <li><Link href="/docs">文档</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">资源</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/docs">文档</Link></li>
-                <li><Link href="/templates">模板</Link></li>
-                <li><Link href="/features">功能</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">公司</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/about">关于我们</Link></li>
-                <li><Link href="/about">联系我们</Link></li>
-                <li><Link href="/about">加入我们</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 VibeGen. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

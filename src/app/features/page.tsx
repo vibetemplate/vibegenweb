@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { ArrowLeft, Sparkles, Code, Zap, MessageSquare, Palette, Shield, Rocket } from "lucide-react";
+import { ArrowLeft, Code, Zap, MessageSquare, Palette, Shield, Rocket } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function FeaturesPage() {
   const features = [
@@ -73,23 +75,7 @@ export default function FeaturesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-2">
-              <Sparkles className="h-8 w-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gray-900">VibeGen</span>
-            </Link>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/docs" className="text-gray-600 hover:text-gray-900">文档</Link>
-              <Link href="/templates" className="text-gray-600 hover:text-gray-900">模板库</Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-900">关于</Link>
-              <Link href="/" className="btn-primary">返回首页</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Header */}
       <section className="pt-16 pb-8">
@@ -203,6 +189,8 @@ export default function FeaturesPage() {
           </Link>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
